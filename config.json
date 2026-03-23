@@ -1,0 +1,12 @@
+{
+  "fetch_days": 7,
+  "high_priority_notify": {
+    "sender_keywords": ["dooray", "두레이"],
+    "condition": "unread_only"
+  },
+  "custom_rules": [],
+  "schedule": {
+    "cron": "0 9 * * 1-5",
+    "timezone": "Asia/Seoul"
+  }
+}
