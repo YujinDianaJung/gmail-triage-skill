@@ -119,13 +119,15 @@ High 메일 각각에 대해 `createDraft` 호출:
 
 ---
 
-## Step 5: Slack DM으로 결과 공유
+## Step 5: 본인 이메일로 결과 발송
 
 **Draft 저장 완료 후 실행.**
 
-Slack MCP로 본인 user_id 조회: `auth_test` → `users_identity` → `users_list` 순서로 시도.
-`conversations_open` → `chat_postMessage`로 발송.
-실패 시 Claude 채팅에 직접 출력: `⚠️ Slack DM 발송 실패. 분석 결과를 여기에 표시합니다:`
+Gmail MCP `send_email`로 본인(`MY_EMAIL`)에게 발송:
+- `to`: MY_EMAIL
+- `subject`: `📬 Gmail Triage — YYYY-MM-DD`
+- `body`: 아래 메시지 형식 (HTML 불필요, plain text)
+- 실패 시 Claude 채팅에 직접 출력: `⚠️ 이메일 발송 실패. 분석 결과를 여기에 표시합니다:`
 
 **메시지 형식:**
 
